@@ -22,10 +22,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-@Preview
-fun MyText() {
+fun MyText(
+	text : String
+) {
 	Text(
-		text = stringResource(id = R.string.welcome),
+		text = text,
 		fontStyle = FontStyle.Italic,
 		color = colorResource(id = R.color.colorPrimary),
 		fontSize = 30.sp,

@@ -69,24 +69,24 @@ fun ContentHomeView(paddingValues: PaddingValues) {
 		var nombre by remember { mutableStateOf("") }
 		var mostrarImagen by remember { mutableStateOf(false) }
 
-		MyText()
+		MyText(stringResource(id = R.string.welcome))
 		Spacer(modifier = Modifier.padding(10.dp))
 
 		MainTextField(value = nombre , onValueChange = {nombre = it}, label = stringResource(id = R.string.tf_nombre))
 		Spacer(modifier = Modifier.padding(10.dp))
 
-		MyButton(text =
-		if (mostrarImagen) stringResource(id = R.string.btn_ocultar) else stringResource(id = R.string.btn_mostrar),
-			onClick = {
-			mostrarImagen = !mostrarImagen
-		})
+		MyButton(
+			text = if (mostrarImagen) stringResource(id = R.string.btn_ocultar)
+					else stringResource(id = R.string.btn_mostrar),
+			onClick = { mostrarImagen = !mostrarImagen}
+		)
 
 		if(mostrarImagen){
 			Image(
 				painter = painterResource(id = R.drawable.paisaje),
 				contentDescription = stringResource(id = R.string.image_description),
 				modifier = Modifier.size(300.dp)
-				)
+			)
 		}
 
 	}
